@@ -1,10 +1,13 @@
 "use strict";
 
 function displayProducts() {
+    const model = require("./model");
+    let categories = model.getCategories();
+
     let data = JSON.parse(event.target.responseText);
     let products = data.products;
     let tbody = document.getElementById("product-tbody");
-    console.log(products);
+
     [...products].forEach(product => {
         let tr = document.createElement("tr");
         tr.id = product.id;
@@ -18,7 +21,7 @@ function displayProducts() {
         tr.appendChild(priceTd);
 
         let catTd = document.createElement("td");
-        catTd.innerText = product.category_id;
+        catTd.innerText = model.getCategoryName(product.category_id);
         tr.appendChild(catTd);
 
         tbody.appendChild(tr);
