@@ -1,19 +1,18 @@
-# Using this repo
+# Seasonal Sales
 
-### Initialize an `npm` project for use with Grunt
+You work as a developer for a big box store.
 
-In the root:
+- [Here](assets/json/products.json) is a JSON representation of a small sample of the products you sell.
+- [Here](assets/json/categories.json) is a JSON representation of some of the departments in your stores.
 
-```shell
-> npm init -y
-```
+## Requirements
 
-`-y` say yes to every question `npm init` would otherwise ask you.
+1. Build a web page that lists all of the products, the name of the department it's in, and the price.
+1. Put a `<select>` element at the top of the page that contains all possible values of the `season_discount` key in the categories file.
+1. As soon as you select one of the seasons, all prices on the page should immediately be discounted by the corresponding percentage.
+   - _Example_: When "spring" is chosen, all products in the corresponding Household category should have their prices updated with a 15% discount off the base price.
+1. The two JSON representations above should be in `products.json`, and `categories.json`. Load both files via XHRs and store the contents in two different JavaScript variables in your code.
 
-### Install necessary `npm` modules
+# Resources
 
-These are listed as dependencies in `package.json` already.
-
-```shell
-> npm install
-```
+1. Use [JSON Lint](http://www.jsonlint.com) to validate your JSON documents.
