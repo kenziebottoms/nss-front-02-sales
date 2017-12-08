@@ -10,12 +10,10 @@ function populateDropdown(categories) {
     });
 }
 
-function displayProducts() {
+function displayProducts(products) {
     const model = require("./model");
     let categories = model.getCategories();
 
-    let data = JSON.parse(event.target.responseText);
-    let products = data.products;
     let tbody = document.getElementById("product-tbody");
 
     [...products].forEach(product => {
@@ -36,12 +34,11 @@ function displayProducts() {
 
         tbody.appendChild(tr);
     });
-    populateDropdown(model.getCategories());    
 }
 
-function populatePage() {
+function initPage() {
     const model = require("./model");
     model.fetchCategories("assets/json/categories.json");
 }
 
-module.exports = {displayProducts, populatePage};
+module.exports = {displayProducts, initPage};

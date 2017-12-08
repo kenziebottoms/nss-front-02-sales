@@ -2,4 +2,4 @@
 
 const viewer = require("./view");
 
-viewer.populatePage();
+viewer.initPage();
