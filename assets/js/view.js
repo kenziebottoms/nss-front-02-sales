@@ -1,22 +1,34 @@
 "use strict";
 
+const events = require("./events");
+const model = require("./model");
+
 function populateDropdown(categories) {
+    console.log("populateDropdown");
     let selectElement = document.getElementById("discounts");
+    selectElement.innerHTML = "";
     categories.forEach(category => {
         let option = document.createElement("option");
         option.value = category.season_discount;
         option.innerText = category.season_discount;
         selectElement.appendChild(option);
     });
+    events.activateDropdown();
 }
 
-function displayProducts(products) {
-    const model = require("./model");
+function displayProducts() {
+    console.log("displayProducts");
+    let products = model.getProducts();
     let categories = model.getCategories();
-
+    displayProducts(products, categories);
+}
+function displayProducts(products, categories) {
+    console.log("displayProducts");
     let tbody = document.getElementById("product-tbody");
+    const model = require("./model");
+    tbody.innerHTML = "";
 
-    [...products].forEach(product => {
+    products.forEach(product => {
         let tr = document.createElement("tr");
         tr.id = product.id;
 
@@ -37,8 +49,8 @@ function displayProducts(products) {
 }
 
 function initPage() {
-    const model = require("./model");
+    console.log("initPage");
     model.fetchCategories("assets/json/categories.json");
 }
 
-module.exports = {displayProducts, initPage};
+module.exports = {displayProducts, initPage, populateDropdown};
