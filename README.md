@@ -7,8 +7,8 @@ You work as a developer for a big box store.
 
 ## Requirements
 
-1. Build a web page that lists all of the products, the name of the department it's in, and the price.
-1. Put a `<select>` element at the top of the page that contains all possible values of the `season_discount` key in the categories file.
+1. :white_check_mark: Build a web page that lists all of the products, the name of the department it's in, and the price.
+1. :white_check_mark: Put a `<select>` element at the top of the page that contains all possible values of the `season_discount` key in the categories file.
 1. As soon as you select one of the seasons, all prices on the page should immediately be discounted by the corresponding percentage.
    - _Example_: When "spring" is chosen, all products in the corresponding Household category should have their prices updated with a 15% discount off the base price.
 1. The two JSON representations above should be in `products.json`, and `categories.json`. Load both files via XHRs and store the contents in two different JavaScript variables in your code.

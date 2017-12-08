@@ -1,5 +1,5 @@
 "use strict";
 
-const model = require("./model");
+const viewer = require("./view");
 
-model.fetchCategories("assets/json/categories.json");
+viewer.populatePage();

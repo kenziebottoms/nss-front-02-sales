@@ -1,5 +1,15 @@
 "use strict";
 
+function populateDropdown(categories) {
+    let selectElement = document.getElementById("discounts");
+    categories.forEach(category => {
+        let option = document.createElement("option");
+        option.value = category.season_discount;
+        option.innerText = category.season_discount;
+        selectElement.appendChild(option);
+    });
+}
+
 function displayProducts() {
     const model = require("./model");
     let categories = model.getCategories();
@@ -26,6 +36,12 @@ function displayProducts() {
 
         tbody.appendChild(tr);
     });
+    populateDropdown(model.getCategories());    
 }
 
-module.exports = {displayProducts};
+function populatePage() {
+    const model = require("./model");
+    model.fetchCategories("assets/json/categories.json");
+}
+
+module.exports = {displayProducts, populatePage};
