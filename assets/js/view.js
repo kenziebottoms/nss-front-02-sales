@@ -38,6 +38,7 @@ function displayProducts(products, categories) {
 
         let priceTd = document.createElement("td");
         priceTd.innerText = `$${product.price}`;
+        priceTd.classList = "price";
         tr.appendChild(priceTd);
 
         let catTd = document.createElement("td");
@@ -48,9 +49,16 @@ function displayProducts(products, categories) {
     });
 }
 
+function discountProducts(prices) {
+    let tds = [...document.getElementsByClassName("price")];
+    tds.forEach((element, index) => {
+        element.innerText = `$${prices[index]}`;
+    });
+}
+
 function initPage() {
     console.log("initPage");
     model.fetchCategories("assets/json/categories.json");
 }
 
-module.exports = {displayProducts, initPage, populateDropdown};
+module.exports = {displayProducts, initPage, populateDropdown, discountProducts};

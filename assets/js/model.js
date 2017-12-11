@@ -60,15 +60,16 @@ function getProductsCategory(product) {
     return [...matchingCats][0];
 }
 
-function getDiscountedProducts(season) {
-    let discountedProducts = products.slice();
-    discountedProducts.forEach(discountedProduct => {
-        let cat = getProductsCategory(discountedProduct);
+function getDiscountedPrices(season) {
+    let prices = products.map(product => {
+        let cat = getProductsCategory(product);
+        let price = product.price;
         if (cat.season_discount == season) {
-            discountedProduct.price *= 0.85;
+            price = product.price*0.85;
         }
+        return price.toFixed(2);
     });
-    return discountedProducts;
+    return prices;
 }
 
-module.exports = {fetchCategories, getCategories, getCategoryName, getProducts, getDiscountedProducts};
+module.exports = {fetchCategories, getCategories, getCategoryName, getProducts, getDiscountedPrices};

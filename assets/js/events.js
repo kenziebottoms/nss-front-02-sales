@@ -9,10 +9,8 @@ function activateDropdown() {
     let dropdown = document.getElementById("discounts");
     dropdown.addEventListener("click", function() {
         console.log("dropdown event listener");
-        console.log(model.getProducts()[0].price);
-        console.log(model.getDiscountedProducts(dropdown.value)[0].price);
-        console.log(model.getProducts()[0].price);
-        viewer.displayProducts(model.getDiscountedProducts(dropdown.value), model.getCategories());
+        viewer.displayProducts(model.getProducts(), model.getCategories());
+        viewer.discountProducts(model.getDiscountedPrices(this.value));
     });
 }
 
