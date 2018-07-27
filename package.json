@@ -1,7 +1,7 @@
 {
   "name": "sales",
   "version": "1.0.0",
-  "description": "",
+  "description": "![](https://img.shields.io/badge/data-static-lightgrey.svg) ![](https://img.shields.io/badge/template-none-lightgrey.svg) ![](https://img.shields.io/badge/js-jquery-blue.svg) ![](https://img.shields.io/badge/modularity-browserify-yellow.svg) ![](https://img.shields.io/badge/css_preprocessor-scss-ff69b4.svg) ![](https://img.shields.io/badge/css_framework-bootstrap-5F2C7C.svg) ![](https://img.shields.io/badge/mvp-working-brightgreen.svg)",
   "main": "Gruntfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,11 +10,21 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "grunt": "^1.0.1",
-    "grunt-browserify": "^5.2.0",
+    "grunt": "^1.0.3",
+    "grunt-browserify": "^5.3.0",
     "grunt-contrib-jshint": "^1.1.0",
     "grunt-contrib-sass": "^1.0.0",
-    "grunt-contrib-watch": "^1.0.0",
+    "grunt-contrib-watch": "^1.1.0",
+    "http-server": "^0.11.1",
     "matchdep": "^2.0.0"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kenziebottoms/nss-front-02-sales.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kenziebottoms/nss-front-02-sales/issues"
+  },
+  "homepage": "https://github.com/kenziebottoms/nss-front-02-sales#readme"
 }

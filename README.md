@@ -12,8 +12,10 @@
 
 ```
 git clone git@github.com:kenziebottoms/nss-front-02-sales.git
+cd nss-front-02-sales
 npm install
 grunt
+hs -o
 ```
 ---
 
